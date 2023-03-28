@@ -130,3 +130,6 @@ dmypy.json
 
 #idea
 .idea/
+
+#db
+todo_project/db.sqlite3
