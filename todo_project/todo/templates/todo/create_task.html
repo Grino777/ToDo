@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+  <link rel="stylesheet" href="{% static 'todo/css/create_task_form.css' %}">
+{% endblock %}
+
+{% block title %}
+  Создание задачи
+{% endblock %}
+
+{% block content %}
+  <div class="create-form-style">
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+      <h2>{{ field.label_tag }}</h2>
+      <h2>{{ field }}</h2>
+      {% endfor %}
+      <button type="submit">Добавить</button>
+    </form>
+  </div>
+{% endblock %}
