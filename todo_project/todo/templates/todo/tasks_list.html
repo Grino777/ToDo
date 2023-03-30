@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+    {% include 'includes/navbar.html' %}
     <h2>Список задач</h2>
     <div class="tasks-list">
         <div class="create-tasks"><a href="{% url 'create_task' %}">Создать задачу</a></div>

@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+  {% include 'includes/navbar.html' %}
   <div class="create-form-style">
     <form method="post">
       {% csrf_token %}
