@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'todo/css/todo_list.css' %}">
+{% endblock %}
+
+
+{% block title %}
+  Список задач
+{% endblock %}
+
+{% block content %}
+    <h2>Список задач</h2>
+    <div class="tasks-list">
+        <div class="create-tasks"><a href="{% url 'create_task' %}">Создать задачу</a></div>
+        {% for todo in todos %}
+            <div class="todo-view">
+                <h2>{{ todo.title }}</h2>
+                <h2>{{ todo.description }}</h2>
+                <h3><a href="delete_task/{{ todo.id }}">Удалить</a></h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,31 +1,29 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, DeleteView
+from django.views.generic import ListView, CreateView, DeleteView, TemplateView
 from .forms import ToDoForm
 from .models import ToDo
+from django.urls import reverse
 
 # Create your views here.
 from django.views import View
 
-
-class MainView(View):
-    def get(self, request):
-        return render(request, 'todo/main.html')
-
-    def post(self, request):
-        pass
+class MainPageView(TemplateView):
+    template_name = 'todo/main.html'
 
 class ToDoListView(ListView):
     model = ToDo
-    template_name = 'todo/todo_list.html'
+    template_name = 'todo/tasks_list.html'
     context_object_name = 'todos'
 
 class CreateToDoView(CreateView):
     model = ToDo
     form_class = ToDoForm
     template_name = 'todo/create_task.html'
-    success_url = 'todo_list'
+    success_url = 'tasks_list'
     context_object_name = 'form'
 
 class DeleteToDoView(DeleteView):
     model = ToDo
-    success_url = 'todo_list'
+    template_name = 'todo/confirm_deletion.html'
+    success_url = '/tasks_list'
+    context_object_name = 'task'

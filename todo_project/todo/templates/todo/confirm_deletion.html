@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+
+{% endblock %}
+
+
+{% block title %}
+    Подтверждение
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <h2>Вы точно хотите удалить запись: {{ task.title }} ?</h2>
+        <button type="button" onclick="history.back();">Назад</button>
+        <button type="submit">Удалить</button>
+    </form>
+{% endblock %}
