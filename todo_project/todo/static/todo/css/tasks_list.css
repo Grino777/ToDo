@@ -54,6 +54,27 @@ ul.task__view li a {
     text-decoration: none;
 }
 
-ul li:hover {
+ul:hover {
   background: #ddd;
+}
+
+ul.task__close {
+    margin: 0;
+    padding: 4px;
+    padding-left: 10px;
+    background-color: #808080;
+    border-bottom: 1px solid;
+   }
+
+ul.task__close li{
+    list-style-type: none;
+    display: inline;
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+ul.task__close li a {
+    position: relative;
+    font-size: 20px;
+    text-decoration: none;
 }
