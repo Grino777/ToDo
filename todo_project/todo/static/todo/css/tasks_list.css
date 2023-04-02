@@ -70,6 +70,7 @@ ul.task__close li{
     list-style-type: none;
     display: inline;
     cursor: pointer;
+    opacity: 0.5;
     text-decoration: line-through;
 }
 

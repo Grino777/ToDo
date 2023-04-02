@@ -12,6 +12,11 @@ class ToDoListView(ListView):
     template_name = 'todo/tasks_list.html'
     context_object_name = 'todos'
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        print(queryset)
+        return queryset.order_by('status', 'title')
+
 class CreateToDoView(CreateView):
     model = ToDo
     form_class = ToDoForm
@@ -35,3 +40,5 @@ class DetailToDoView(DetailView):
     model = ToDo
     template_name = 'todo/detail_info.html'
     context_object_name = 'task'
+
+
