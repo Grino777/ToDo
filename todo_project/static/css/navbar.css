@@ -1,0 +1,23 @@
+.navigation__bar {
+    position: relative;
+    font-size: 18px;
+    height: 50px;
+    border-bottom: 1px solid black;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: #b1aed4;
+}
+
+.button__navigation {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 22px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.button__navigation:hover {
+    background-color: #ddd;
+}

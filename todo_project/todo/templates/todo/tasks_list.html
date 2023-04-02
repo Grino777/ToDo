@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block script_add %}
-    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 {% endblock %}
 
 
@@ -17,15 +16,17 @@
 
 {% block content %}
     {% include 'includes/navbar.html' %}
-    <h2 class="title__list">Список задач</h2>
-    <div class="tasks-list">
-        <div class="create-tasks"><a href="{% url 'create_task' %}">Создать задачу</a></div>
-        {% for todo in todos %}
+        <div class="content__tasks">
+            <h2 class="title__list">Список задач</h2>
+            <div class="tasks-list">
+                <div class="create-tasks"><a href="{% url 'create_task' %}">Создать задачу</a></div>
+                {% for todo in todos %}
                 <ul class="{% if todo.status is False %} task__view {% else %} task__close {% endif %}}">
                     <li><a href="detail_task/{{ todo.id }}">{{ todo.title }}</a></li>
                     <li><a href="update_task/{{ todo.id }}">&#9998;</a></li>
                     <li><a href="delete_task/{{ todo.id }}">&#10008;</a></li>
                 </ul>
-        {% endfor %}
-    </div>
+                {% endfor %}
+            </div>
+        </div>
 {% endblock %}

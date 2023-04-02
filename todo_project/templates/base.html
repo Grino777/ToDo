@@ -9,7 +9,16 @@
     {% block css_add %} {% endblock %}
     {% block script_add %} {% endblock %}
 </head>
+
+<header>
+    {% block navigation %}
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %} ">
+    {% endblock %}
+</header>
+
 <body>
-    {% block content %} {% endblock %}
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
 </body>
 </html>
