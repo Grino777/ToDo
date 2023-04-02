@@ -1,11 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import ListView, CreateView, DeleteView, TemplateView
+from django.views.generic import ListView, CreateView, DeleteView, TemplateView, UpdateView, DetailView
 from .forms import ToDoForm
 from .models import ToDo
-from django.urls import reverse
 
 # Create your views here.
-from django.views import View
 
 class MainPageView(TemplateView):
     template_name = 'todo/main.html'
@@ -26,4 +23,15 @@ class DeleteToDoView(DeleteView):
     model = ToDo
     template_name = 'todo/confirm_deletion.html'
     success_url = '/tasks_list'
+    context_object_name = 'task'
+
+class UpdateToDoView(UpdateView):
+    model = ToDo
+    template_name = 'todo/create_task.html'
+    success_url = '/tasks_list'
+    fields = ['title', 'description', 'status']
+
+class DetailToDoView(DetailView):
+    model = ToDo
+    template_name = 'todo/detail_info.html'
     context_object_name = 'task'

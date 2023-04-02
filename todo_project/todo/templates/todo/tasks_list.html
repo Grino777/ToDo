@@ -13,15 +13,15 @@
 
 {% block content %}
     {% include 'includes/navbar.html' %}
-    <h2>Список задач</h2>
+    <h2 class="title__list">Список задач</h2>
     <div class="tasks-list">
         <div class="create-tasks"><a href="{% url 'create_task' %}">Создать задачу</a></div>
         {% for todo in todos %}
-            <div class="todo-view">
-                <h2>{{ todo.title }}</h2>
-                <h2>{{ todo.description }}</h2>
-                <h3><a href="delete_task/{{ todo.id }}">Удалить</a></h3>
-            </div>
+                <ul class="task__view">
+                    <li><a href="detail_task/{{ todo.id }}">{{ todo.title }}</a></li>
+                    <li><a href="update_task/{{ todo.id }}">&#9998;</a></li>
+                    <li><a href="delete_task/{{ todo.id }}">&#10008;</a></li>
+                </ul>
         {% endfor %}
     </div>
 {% endblock %}

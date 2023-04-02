@@ -1,5 +1,5 @@
 .create-form-style {
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 15px;
     padding: 2rem;
     margin-left: auto;
@@ -9,12 +9,21 @@
 }
 
 .create-form-style input {
-    border-radius: 2px;
-    height: 20px;
+    height: 1.2rem;
+    width: 60%;
 }
 
 .create-form-style textarea {
-    border-radius: 2px;
-    height: 20px;
+    border-radius: 1px;
+    height: 1.2rem;
+    width: 60%;
 }
 
+.form__button {
+    margin: 0 auto;
+    display: block;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 20%;
+}

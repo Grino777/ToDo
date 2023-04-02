@@ -1,8 +1,8 @@
 
 .tasks-list {
     position: static;
-    border: 2px solid;
-    border-radius: 30px;
+    border: 1px solid;
+    border-radius: 5px;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
@@ -13,6 +13,7 @@
     display: block;
     padding-top: 2%;
     padding-bottom: 2%;
+    border-bottom: 1px solid;
 }
 
 .create-tasks a {
@@ -28,13 +29,31 @@
     background-color: #ADFF2F;
 }
 
-.todo-view {
-    display: block;
-    position: relative;
-    margin: 5%;
-    border: 1px solid;
-    border-radius: 2rem;
+.title__list {
+    padding-top: 5%;
     text-align: center;
-    margin-left: 5%;
-    background-color: #AFEEEE;
+}
+
+ul.task__view {
+    margin: 0;
+    padding: 4px;
+    padding-left: 10px;
+    background-color: #B0C4DE;
+    border-bottom: 1px solid;
+   }
+
+ul.task__view li{
+    list-style-type: none;
+    display: inline;
+    cursor: pointer;
+}
+
+ul.task__view li a {
+    position: relative;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+ul li:hover {
+  background: #ddd;
 }

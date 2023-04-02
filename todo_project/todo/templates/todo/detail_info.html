@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'todo/css/detail_info.css' %}">
+{% endblock %}
+
+
+{% block title %}
+  Список задач
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/navbar.html' %}
+        <div class="detail__info">
+          <ul class="li__style">
+            <li>Название - {{ task.title }}</li>
+            <li>Описание - {{ task.description }}</li>
+            <li>Статус - {{ task.status }}</li>
+            <li>Дата создания - {{ task.date }}</li>
+            <li>Время создания - {{ task.time }}</li>
+          </ul>
+        </div>
+{% endblock %}
