@@ -9,6 +9,8 @@
 .content__tasks {
     position: relative;
     display: block;
+    height: 100vh;
+    width: 100vw;
 }
 
 /*
@@ -20,10 +22,9 @@
 */
 
 h2.title__list {
-    display: block;
-    top: 0;
-    left:0;
-    border: 1px solid black;
+    text-align: center;
+    height: 10%;
+    vertical-align: middle;
 }
 
 /*
@@ -40,17 +41,19 @@ div.tasks__list {
     position: relative;
     display: block;
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 20rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Блок создания кнопки */
+/* Блок создания кнопки и поиска */
 div.create__tasks {
     position: relative;
-    display: inline-block;
-    border: 1px solid black;
+    display: block;
     width: 100%;
-    height: 2em;
+    height: 20%;
+    border-bottom: 1px solid;
 }
 
 /* Блок поиска */
@@ -60,31 +63,40 @@ div.search__field {
     width: 50%;
     height: 100%;
     left: 0;
-    text-align: right;
+    text-align: left;
+    margin-left: 4%;
+    margin-top: 1.5%;
+    border-radius: 45px;
 
 }
 
 /* Стили поиска */
 div.search__field input {
-    width: 100%;
+    width: 65%;
     height: 50%;
-    vertical-align: sub;
+    border: 1px solid;
+    border-radius: 45px;
 }
-
 
 /* Кнопка создания */
 div.create__tasks a {
     display: block;
     position: absolute;
-    width: 50%;
-    height: 100%;
+    text-decoration: none;
+    width: 30%;
     right: 0;
     top: 0;
-    text-align: right;
-    height: 100%;
-    border: 1px solid;
     text-align: center;
     background-color: white;
+    border-radius: 5px;
+    margin: 5px;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+
+/* Кнопка создания при наведении */
+div.create__tasks a:hover {
+    background-color: #39EC49;
 }
 
 /* Блок с задачами */
@@ -97,7 +109,8 @@ div.tasks {
 /* Блок задачи */
 ul.task__info {
     position: relative;
-    border: 1px solid black;
+    border-bottom: 1px solid;
+    height: 3rem;
 }
 
 /* Отображение блоков задач */
@@ -111,22 +124,70 @@ a.title__task {
     top:0;
     left:0;
     width: 50%;
-    height: 100%;
+    height: 2.44rem;
     background-color: white;
+    font-size: 1.3125rem;
+    text-decoration: none;
+    padding: 1% 2% 0 0;
+    word-wrap: break-word;
+}
+
+/* Отображение названия задач при наведении */
+a.title__task:hover {
+    background-color: #ddd;
 }
 
 /* Отображение кнопки редактирования */
-
-
-/* Отображение кнопки удаления */
-
-
-
-
-/* Стили закрытых задач */
-ul.close a.title__task {
-    text-decoration: line-through;
-    background-color: green;
+a.update__task {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 5%;
+    text-align: center;
+    text-decoration: none;
 }
 
+/* Отображение кнопки редактирования при наведении*/
+a.update__task:hover {
+    background-color: #ddd;
+}
 
+/* Отображение кнопки удаления */
+a.delete__task {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5%;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Отображение кнопки удаления при наведении*/
+a.delete__task:hover {
+    background-color: #ddd;
+}
+
+/* Отображение завершенных задач при наведении */
+ul.close a.title__task:hover {
+    background-color: #74F931;
+}
+
+/* Стили закрытых задач */
+/*ul.close a.title__task {
+    text-decoration: line-through;
+    background-color: #00ff51;
+    height: 2.44rem;
+    font-size: 1.3125rem;
+    text-decoration: none;
+}*/
+
+ul.close a.title__task {
+    width: 50%;
+    height: 100%;
+    background-color: grey;
+    font-size: 1.3125rem;
+    text-decoration: none;
+    text-decoration: line-through;
+    padding: 1% 2% 0 0;
+    word-wrap: break-word;
+}
