@@ -17,13 +17,15 @@
 {% block content %}
     {% include 'includes/navbar.html' %}
         <div class="content__tasks">
-            <h2 class="title__list">Список задач</h2>
+            <div class="title__list">
+                <h2>Список задач</h2>
+            </div>
             <div class="tasks__list">
                 <div class="create__tasks">
                     <div class="search__field"><input type="text"></div>
                     <a href="{% url 'create_task' %}">Создать задачу</a>
                 </div>
-                <div class="tasks">
+                <section class="tasks">
                     {% for todo in todos %}
                         <ul class="task__info {% if todo.status is True %}close{% endif %}">
 <!--                        <ul class="task__info {% if todo.status is False %}task__info{% else %}task__info__close{% endif %}">-->
@@ -32,7 +34,7 @@
                             <li><a href="delete_task/{{ todo.id }}" class="delete__task">&#10008;</a></li>
                         </ul>
                     {% endfor %}
-                </div>
+                </section>
             </div>
         </div>
 {% endblock %}
