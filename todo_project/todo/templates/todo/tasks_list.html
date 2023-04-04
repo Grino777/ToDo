@@ -29,9 +29,9 @@
                     {% for todo in todos %}
                         <ul class="task__info {% if todo.status is True %}close{% endif %}">
 <!--                        <ul class="task__info {% if todo.status is False %}task__info{% else %}task__info__close{% endif %}">-->
-                            <li><a href="detail_task/{{ todo.id }}" class="title__task">{{ todo.title }}</a></li>
-                            <li><a href="update_task/{{ todo.id }}" class="update__task">&#9998;</a></li>
-                            <li><a href="delete_task/{{ todo.id }}" class="delete__task">&#10008;</a></li>
+                            <li class="title__task"><a href="detail_task/{{ todo.id }}">{{ todo.title }}</a></li>
+                            <li class="update__task"><a href="update_task/{{ todo.id }}">&#9998;</a></li>
+                            <li class="delete__task"><a href="delete_task/{{ todo.id }}">&#10008;</a></li>
                         </ul>
                     {% endfor %}
                 </section>
