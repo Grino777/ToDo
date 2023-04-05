@@ -14,8 +14,13 @@ class ToDoListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        print(queryset)
         return queryset.order_by('status', 'title')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        object_list = super(ToDoListView, self).get_context_data()
+        object_list['finished_tasks'] = object_list['object_list'].filter(status=True)
+        object_list['unfinished_tasks'] = object_list['object_list'].filter(status=False)
+        return object_list
 
 class CreateToDoView(CreateView):
     model = ToDo

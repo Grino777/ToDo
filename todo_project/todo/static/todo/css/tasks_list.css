@@ -39,7 +39,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    border: 3px solid;
+    border: 3px solid rgba(1, 1, 1, .4);
     border-radius: 7px;
     min-width: 550px;
 }
@@ -72,6 +72,7 @@ div.create__button {
 
 }
 
+/* Позиционирование кнопки создания задач */
 .create__button a {
     position: absolute;
     width: 100%;
@@ -79,13 +80,26 @@ div.create__button {
     text-align: center;
 }
 
+/* Стили кнопки создания задач */
+.create__button a:hover {
+    background: #ddd;
+    border: 2px solid rgba(24, 21, 19, .5);
+    width: 99%;
+    height: 93%;
+    border-radius: 5px;
+}
 
-/* Отображение блока задач */
-.task__info {
+
+/* Общее отображение задач */
+.task {
     grid-template-columns: 4fr .5fr .5fr;
     display: grid;
     height: 3rem;
     font-size: 2rem;
+}
+
+.task li {
+    margin-bottom: 2px;
 }
 
 /* Оформление всех элементов li */
@@ -102,7 +116,8 @@ li {
 
 /* ... */
 .task__info li{
-    border: 1px solid black;
+    border: 1px solid rgba(1, 1, 1, .1);
+    border-radius: 5px;
 }
 
 /* Позиционирование заголовка задачи */
@@ -115,6 +130,16 @@ li.title__task a{
     position: absolute;
     background: #ddd;
     padding-left: 3%;
+    width: 97%;
+    height: 99%;
+}
+
+/* Стили заголовков при наведении */
+.title__task a:hover{
+    position: absolute;
+    background: #adacac;
+    border: 2px solid rgba(24, 21, 19, .5);
+    height: 94%;
 }
 
 /* Стили кнопок update/delete */
@@ -128,6 +153,7 @@ li.title__task a{
 .update__task:hover,
 .delete__task:hover {
     background: #88db93;
+    border: 2px solid rgba(24, 21, 19, .5);
 }
 
 /* Стили всех ссылок на странице */
@@ -136,11 +162,6 @@ a {
 }
 
 /* Стили ссылок закрытых задач */
-ul.close .title__task a{
+ul.finished__task .title__task a {
     text-decoration: line-through;
-}
-
-/* Стили заголовков при наведении */
-.title__task a:hover{
-    background: #adacac;
 }
