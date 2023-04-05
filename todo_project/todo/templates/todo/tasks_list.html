@@ -22,8 +22,13 @@
             </div>
             <div class="tasks__list">
                 <div class="create__tasks">
-                    <div class="search__field"><input type="text"></div>
-                    <a href="{% url 'create_task' %}">Создать задачу</a>
+                    <div class="search__field">
+                        <input type="text">
+                    </div>
+                    <div class="create__button">
+                        <a href="{% url 'create_task' %}">Создать задачу</a>
+                    </div>
+
                 </div>
                 <section class="tasks">
                     {% for todo in todos %}

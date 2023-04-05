@@ -1,7 +1,9 @@
+/* Оформление фона страницы */
 .content {
     background: linear-gradient(90deg, #f5af19, #f12711);
 }
 
+/* Стили основного блока с контентом */
 .content__tasks {
     position: relative;
     display: block;
@@ -9,13 +11,14 @@
     width: 100vw;
 }
 
-
+/* Стили блока с заголовком формы */
 .title__list {
     position: relative;
     height: 10rem;
     /*line-height: 10rem;*/
 }
 
+/* Расположение текста заголовка */
 .title__list h2 {
     position: absolute;
     left: 25%;
@@ -23,6 +26,7 @@
 
 }
 
+/* Блок поиска и создания задач */
 .create__tasks {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -40,6 +44,41 @@
     min-width: 550px;
 }
 
+/* Стили блока c поиском и create__button */
+.create__tasks div {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    height: 3rem;
+    font-size: 2rem;
+}
+
+div.search__field {
+    position: relative;
+    width: 100%
+    height: 100%;
+}
+
+.search__field input {
+    position: absolute;
+    height: 50%;
+    width: 80%;
+    margin: 0.5em 0px 0 10%;
+}
+
+div.create__button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.create__button a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
 
 /* Отображение блока задач */
 .task__info {
@@ -49,31 +88,59 @@
     font-size: 2rem;
 }
 
+/* Оформление всех элементов li */
 li {
     list-style-type: none;
 }
 
+/* ... */
 .task__info a{
     display: block;
     height: 100%;
-    width: 100%;
+    width: 97%;
 }
 
+/* ... */
 .task__info li{
     border: 1px solid black;
 }
 
-
-li.title__task a{
-    padding-left: 10px;
+/* Позиционирование заголовка задачи */
+.title__task {
+    position: relative;
 }
 
+/* Позиционирование ссылки в блоке заголовка */
+li.title__task a{
+    position: absolute;
+    background: #ddd;
+    padding-left: 3%;
+}
 
+/* Стили кнопок update/delete */
 .update__task,
 .delete__task {
+    background: #d6db88;
     text-align: center;
 }
 
+/* Стили кнопок update/delete при наведении */
+.update__task:hover,
+.delete__task:hover {
+    background: #88db93;
+}
+
+/* Стили всех ссылок на странице */
 a {
     text-decoration: none;
+}
+
+/* Стили ссылок закрытых задач */
+ul.close .title__task a{
+    text-decoration: line-through;
+}
+
+/* Стили заголовков при наведении */
+.title__task a:hover{
+    background: #adacac;
 }
