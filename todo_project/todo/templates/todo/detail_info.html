@@ -13,13 +13,19 @@
 
 {% block content %}
     {% include 'includes/navbar.html' %}
+    <div class="content__tasks">
         <div class="detail__info">
-          <ul class="li__style">
-            <li>Название - {{ task.title }}</li>
-            <li>Описание - {{ task.description }}</li>
-            <li>Статус - {{ task.status }}</li>
-            <li>Дата создания - {{ task.date }}</li>
-            <li>Время создания - {{ task.time }}</li>
-          </ul>
+            <ul class="task">
+                <li class="title">{{ task.title }}</li>
+                <li class="description">{{ task.description }}</li>
+                <li class="status">
+                    <p class="status__title">Статус: </p>
+                    <p class="{% if task.status %}close{% else %}open{% endif %}">
+                        {% if task.status %}&#9745;{% else %}&#9746;{% endif %}
+                    </p>
+                </li>
+                <li class="date">Дата создания: | {{ task.time }} | {{ task.date }} |</li>
+            </ul>
         </div>
+    </div>
 {% endblock %}

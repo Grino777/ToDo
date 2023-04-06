@@ -1,15 +1,4 @@
-/* Оформление фона страницы */
-.content {
-    background: linear-gradient(90deg, #f5af19, #f12711);
-}
 
-/* Стили основного блока с контентом */
-.content__tasks {
-    position: relative;
-    display: block;
-    height: 100vh;
-    width: 100vw;
-}
 
 /* Стили блока с заголовком формы */
 .title__list {
@@ -147,6 +136,7 @@ li.title__task a{
 .delete__task {
     background: #d6db88;
     text-align: center;
+    height: 95%;
 }
 
 /* Стили кнопок update/delete при наведении */
@@ -154,6 +144,7 @@ li.title__task a{
 .delete__task:hover {
     background: #88db93;
     border: 2px solid rgba(24, 21, 19, .5);
+    height: 95%;
 }
 
 /* Стили всех ссылок на странице */

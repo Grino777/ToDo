@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block css_add %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'todo/css/tasks_list.css' %}">
 {% endblock %}
 
@@ -23,7 +24,9 @@
             <div class="tasks__list">
                 <div class="create__tasks">
                     <div class="search__field">
-                        <input type="text">
+                        <form action="/search">
+                            <input type="search" name="query">
+                        </form>
                     </div>
                     <div class="create__button">
                         <a href="{% url 'create_task' %}">Создать задачу</a>

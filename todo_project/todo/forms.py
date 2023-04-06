@@ -10,3 +10,6 @@ class ToDoForm(forms.ModelForm):
             'description': 'Описание',
         }
 
+class SearchForm(forms.Form):
+    query = forms.CharField(max_length=155)
+

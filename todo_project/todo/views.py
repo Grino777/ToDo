@@ -1,8 +1,24 @@
+from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, TemplateView, UpdateView, DetailView
-from .forms import ToDoForm
+from .forms import ToDoForm, SearchForm
 from .models import ToDo
 
 # Create your views here.
+
+def search_field(request):
+    form = SearchForm()
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            cd = form.cleaned_data
+            title = cd['query']
+            print(title)
+            obj = ToDo.objects.filter(title__icontains=title)
+            print(obj)
+        return render(request, 'todo/search.html', context={'data': title,
+                                                            'obj': obj})
+
 
 class MainPageView(TemplateView):
     template_name = 'todo/main.html'
