@@ -1,5 +1,3 @@
-
-
 /* Стили блока с заголовком формы */
 .title__list {
     position: relative;
@@ -71,11 +69,11 @@ div.create__button {
 
 /* Стили кнопки создания задач */
 .create__button a:hover {
-    background: #ddd;
     border: 2px solid rgba(24, 21, 19, .5);
     width: 99%;
     height: 93%;
     border-radius: 5px;
+    background: orange;
 }
 
 
@@ -127,8 +125,8 @@ li.title__task a{
 .title__task a:hover{
     position: absolute;
     background: #adacac;
-    border: 2px solid rgba(24, 21, 19, .5);
     height: 94%;
+    background: rgba(24, 21, 19, .3);
 }
 
 /* Стили кнопок update/delete */
@@ -142,7 +140,7 @@ li.title__task a{
 /* Стили кнопок update/delete при наведении */
 .update__task:hover,
 .delete__task:hover {
-    background: #88db93;
+    background: orange;
     border: 2px solid rgba(24, 21, 19, .5);
     height: 95%;
 }
@@ -150,9 +148,11 @@ li.title__task a{
 /* Стили всех ссылок на странице */
 a {
     text-decoration: none;
+    color: #2e2d2d;
 }
 
 /* Стили ссылок закрытых задач */
 ul.finished__task .title__task a {
     text-decoration: line-through;
+    text-decoration-color: #f12908;
 }

@@ -1,23 +1,18 @@
 .navigation__bar {
-    position: relative;
-    font-size: 18px;
-    height: 50px;
-    border-bottom: 1px solid black;
-    vertical-align: middle;
-    padding-left: 20px;
-    padding-top: 20px;
-    background-color: #b1aed4;
+    display: grid;
+    grid-template-columns: 2fr 2fr 10fr;
+    height: 4rem;
+    text-align: center;
+    background: #be5e22;
 }
 
-.button__navigation {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 22px;
-    height: auto;
-    vertical-align: middle;
-    margin-left: 10px;
+a.button__navigation {
+    font-size: 1.5rem;
+    word-wrap: break-word;
 }
 
-.button__navigation:hover {
-    background-color: #ddd;
+a.button__navigation:hover {
+    background: orange;
+    border: 3px solid rgba(24, 21, 19, .5);
+    border-radius: 5px;
 }

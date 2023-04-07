@@ -1,29 +1,36 @@
-.create-form-style {
-    border: 1px solid;
-    border-radius: 15px;
-    padding: 2rem;
+.content__task {
     margin-left: auto;
     margin-right: auto;
-    width: 27%;
-    margin-top: 5%;
+    width: 50%;
+    margin-top: 15%;
+    padding-left: 3%;
+    padding-bottom: 1%;
+    border: 2px solid rgba(24, 21, 19, .5);
+    border-radius: 7px;
+
 }
 
-.create-form-style input {
-    height: 1.2rem;
-    width: 60%;
+.content__task {
+    word-wrap: break-word;
 }
 
-.create-form-style textarea {
-    border-radius: 1px;
-    height: 1.2rem;
-    width: 60%;
+#id_title {
+    height: 1.3rem;
+    border-radius: 5px;
+}
+
+#id_description {
+    border-radius: 5px;
 }
 
 .form__button {
-    margin: 0 auto;
-    display: block;
-    padding: 5px;
-    border: 1px solid;
+    height: 1.5rem;
+    width: 5rem;
+    border: 1px solid white;
     border-radius: 5px;
-    margin-top: 20%;
+}
+
+.form__button:hover {
+    border-radius: 5px;
+    background: rgba(24, 21, 19, .3);
 }
