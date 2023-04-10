@@ -8,5 +8,5 @@ urlpatterns = [
     path('detail_task/<int:pk>', DetailToDoView.as_view()),
     path('update_task/<int:pk>', UpdateToDoView.as_view()),
     path('delete_task/<int:pk>', DeleteToDoView.as_view()),
-    path('search', search_field),
+    # path('search', search_field),
 ]

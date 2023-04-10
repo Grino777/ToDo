@@ -35,8 +35,9 @@
 .create__tasks div {
     grid-template-columns: 1fr 1fr;
     display: grid;
-    height: 3rem;
+    height: 4rem;
     font-size: 2rem;
+
 }
 
 div.search__field {
@@ -50,6 +51,7 @@ div.search__field {
     height: 50%;
     width: 80%;
     margin: 0.5em 0px 0 10%;
+    font-size: 20px;
 }
 
 div.create__button {
@@ -155,4 +157,8 @@ a {
 ul.finished__task .title__task a {
     text-decoration: line-through;
     text-decoration-color: #f12908;
+}
+
+li.hide {
+    display: none;
 }

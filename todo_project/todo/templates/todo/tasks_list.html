@@ -3,11 +3,11 @@
 {% load static %}
 
 {% block css_add %}
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'todo/css/tasks_list.css' %}">
 {% endblock %}
 
 {% block script_add %}
+    <script src="{% static 'todo/js/search.js' %}"></script>
 {% endblock %}
 
 
@@ -24,9 +24,7 @@
             <div class="tasks__list">
                 <div class="create__tasks">
                     <div class="search__field">
-                        <form action="/search">
-                            <input type="search" name="query">
-                        </form>
+                        <input type="text" id="elastic">
                     </div>
                     <div class="create__button">
                         <a href="{% url 'create_task' %}">Создать задачу</a>
@@ -35,26 +33,26 @@
                 </div>
                 <section class="tasks">
                     <div class="unfinished__tasks">
-                            <h2>Незавершенные задачи: </h2>
-                            {% for task in unfinished_tasks %}
-                                <ul class="task unfinished__task">
-                                    <li class="title__task"><a href="detail_task/{{ task.id }}">{{ task.title }}</a></li>
-                                    <li class="update__task"><a href="update_task/{{ task.id }}">&#9998;</a></li>
-                                    <li class="delete__task"><a href="delete_task/{{ task.id }}">&#10008;</a></li>
-                                </ul>
-                            {% endfor %}
-                    </div>
-                    <div class="finished__tasks">
-                        <h2>Завершенные задачи: </h2>
-                        {% for task in finished_tasks %}
-                            <ul class="task finished__task">
-                                <li class="title__task"><a href="detail_task/{{ task.id }}">{{ task.title }}</a></li>
-                                <li class="update__task"><a href="update_task/{{ task.id }}">&#9998;</a></li>
-                                <li class="delete__task"><a href="delete_task/{{ task.id }}">&#10008;</a></li>
-                            </ul>
-                        {% endfor %}
-                    </div>
+                            <ul id="list">
+                                <li class="unfinished__task__title"><h2>Незавершенные задачи: </h2></li>
+                                {% for task in unfinished_tasks %}
+                                    <li class="unfinished__task">
+                                        <a href="detail_task/{{ task.id }}" class="title__task">{{ task.title }}</a>
+                                        <a href="update_task/{{ task.id }}" class="update__task">&#9998;</a>
+                                        <a href="delete_task/{{ task.id }}" class="delete__task">&#10008;</a>
+                                    </li>
+                                {% endfor %}
 
+                                <li class="finished__task__title"><h2>Завершенные задачи: </h2></li>
+                                {% for task in finished_tasks %}
+                                    <li class="finished__task">
+                                        <a href="detail_task/{{ task.id }}" class="title__task">{{ task.title }}</a>
+                                        <a href="update_task/{{ task.id }}" class="update__task">&#9998;</a>
+                                        <a href="delete_task/{{ task.id }}" class="delete__task">&#10008;</a>
+                                    </li>
+                                {% endfor %}
+                        </ul>
+                    </div>
                 </section>
             </div>
         </div>
