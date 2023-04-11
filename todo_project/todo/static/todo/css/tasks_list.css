@@ -21,15 +21,6 @@
 }
 
 
-/* Стили блока задач */
-.tasks__list {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    border: 3px solid rgba(1, 1, 1, .4);
-    border-radius: 7px;
-    min-width: 550px;
-}
 
 /* Стили блока c поиском и create__button */
 .create__tasks div {
@@ -78,87 +69,68 @@ div.create__button {
     background: orange;
 }
 
+/* Оформление всех элементов li */
+li {
+    list-style-type: none;
+}
+
+/*-------------------------------------------------Стили блока задач--------------------------------------------------*/
+
+.tasks__list {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 3px solid rgba(1, 1, 1, .4);
+    border-radius: 7px;
+    min-width: 550px;
+}
+
+.list {
+    margin-top: 3%;
+}
+
+.tasks__list h2{
+    font-size: 2rem;
+}
 
 /* Общее отображение задач */
-.task {
+.list li{
     grid-template-columns: 4fr .5fr .5fr;
     display: grid;
     height: 3rem;
     font-size: 2rem;
 }
 
-.task li {
+li.task {
+    background: rgba(1, 1, 1, 0.1);
     margin-bottom: 2px;
 }
 
-/* Оформление всех элементов li */
-li {
-    list-style-type: none;
+.task a {
+    padding-left: 2%;
 }
 
-/* ... */
-.task__info a{
-    display: block;
-    height: 100%;
-    width: 97%;
+.update__task,
+.delete__task {
+    text-align: center;
 }
 
-/* ... */
-.task__info li{
-    border: 1px solid rgba(1, 1, 1, .1);
+.update__task:hover,
+.delete__task:hover,
+.title__task:hover {
+    background: orange;
+    border: 1px solid rgba(1, 1, 1, 0.5);
     border-radius: 5px;
 }
 
-/* Позиционирование заголовка задачи */
-.title__task {
-    position: relative;
-}
-
-/* Позиционирование ссылки в блоке заголовка */
-li.title__task a{
-    position: absolute;
-    background: #ddd;
-    padding-left: 3%;
-    width: 97%;
-    height: 99%;
-}
-
-/* Стили заголовков при наведении */
-.title__task a:hover{
-    position: absolute;
-    background: #adacac;
-    height: 94%;
-    background: rgba(24, 21, 19, .3);
-}
-
-/* Стили кнопок update/delete */
-.update__task,
-.delete__task {
-    background: #d6db88;
+.unfinished__task__title,
+.finished__task__title {
     text-align: center;
-    height: 95%;
 }
 
-/* Стили кнопок update/delete при наведении */
-.update__task:hover,
-.delete__task:hover {
-    background: orange;
-    border: 2px solid rgba(24, 21, 19, .5);
-    height: 95%;
-}
-
-/* Стили всех ссылок на странице */
-a {
-    text-decoration: none;
-    color: #2e2d2d;
-}
-
-/* Стили ссылок закрытых задач */
-ul.finished__task .title__task a {
+.finished__task a.title__task {
     text-decoration: line-through;
-    text-decoration-color: #f12908;
+    text-decoration-color: rgba(255, 0, 0, 0.6);
 }
 
-li.hide {
-    display: none;
-}
+/*--------------------------------------------------------------------------------------------------------------------*/

@@ -1,10 +1,9 @@
-from django.http import HttpResponse
-from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, TemplateView, UpdateView, DetailView
-from .forms import ToDoForm, SearchForm
+from .forms import ToDoForm
 from .models import ToDo
 
 # Create your views here.
+
 class MainPageView(TemplateView):
     template_name = 'todo/main.html'
 
@@ -21,7 +20,6 @@ class ToDoListView(ListView):
         object_list = super(ToDoListView, self).get_context_data()
         object_list['finished_tasks'] = object_list['object_list'].filter(status=True)
         object_list['unfinished_tasks'] = object_list['object_list'].filter(status=False)
-        print(object_list)
         return object_list
 
 class CreateToDoView(CreateView):
